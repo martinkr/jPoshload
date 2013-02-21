@@ -4,7 +4,7 @@
  *
  * jPoshLoad is an advanced animated preloader - think of flash-ish preloading.
  *
- * @Version: 0.9b
+ * @Version: 1.0.0
  *
  *
  * Copyright (c) 2011-2012 Martin Krause (jquery.public.mkrause.info)

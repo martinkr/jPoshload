@@ -4,35 +4,35 @@
 
 ## Example
 
-jQuery(document).ready(function(){
-	 $.fn.jPoshLoad('test1', {
-		forceNoCache: true,
-		images : {
-			image1: {
-				id: 'X',
-				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-01.jpg'
-			},
-			image2: {
-				id: 'Y',
-				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-02.jpg'
-			},
-			image3: {
-				id: null,
-				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-03.jpg'
-			},
-			image4: {
-				id: null,
-			src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-04.jpg'
-			},
-			image5: {
-				id: null,
-				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-05.jpg'
-			},
-			image6: {
-				id: null,
-				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-06.jpg'
+	jQuery(document).ready(function(){
+		 $.fn.jPoshLoad('test1', {
+			forceNoCache: true,
+			images : {
+				image1: {
+					id: 'X',
+					src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-01.jpg'
+				},
+				image2: {
+					id: 'Y',
+					src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-02.jpg'
+				},
+				image3: {
+					id: null,
+					src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-03.jpg'
+				},
+				image4: {
+					id: null,
+				src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-04.jpg'
+				},
+				image5: {
+					id: null,
+					src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-05.jpg'
+				},
+				image6: {
+					id: null,
+					src: 'http://www.ipad3wallpapers.com/wp-content/uploads/2012/04/iPad-3-Wallpaper-Pattern-06.jpg'
+				}
 			}
-		}
 		});
 	})
 
@@ -43,6 +43,6 @@ jQuery(document).ready(function(){
 Dual licensed under the MIT and GPL licenses.
 
 * MIT - http://www.opensource.org/licenses/mit-license.php
-* GNU - http://www.gnu.org/licenses/gpl-3.0.html
+* LGPL-3.0 - http://opensource.org/licenses/lgpl-3.0.html
 
 Copyright (c) 2011-2012 Martin Krause (jquery.public.mkrause.info)
