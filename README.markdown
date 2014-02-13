@@ -84,4 +84,4 @@ Dual licensed under the MIT and GPL licenses.
 * MIT - http://www.opensource.org/licenses/mit-license.php
 * LGPL-3.0 - http://opensource.org/licenses/lgpl-3.0.html
 
-Copyright (c) 2011-2012 Martin Krause (jquery.public.mkrause.info)
+Copyright (c) 2011-2014 Martin Krause (martinkr.github.io)
