@@ -15,11 +15,13 @@
 ```
 
 **jQuery.fn.jPoshLoad.getStatus**
+
 Returns the number of images still not loaded completely
 * @param  {String} sIdLoader_ Completed loader's id
 * @return {Number} Images left to load
 
 **jQuery.fn.jPoshLoad.getStatus**
+
 * Check if a specific loader is done with loading
 * @param  {String} sIdLoader_ Completed loader's id
 * @return {Bool}
@@ -47,6 +49,7 @@ Returns the number of images still not loaded completely
 ### Override these functions to match your page
 
 **$.fn.jPoshLoad.onComplete**
+
 Executed when all elements are completed.
 Add some code that removes or hides your laoder and starts your application.
 * @param  {String} sIdLoader_ the completed loader's id
@@ -55,6 +58,7 @@ Add some code that removes or hides your laoder and starts your application.
 
 
 **$.fn.jPoshLoad.updateStatus**
+
 Updates the loader's status
 Add some code to match your loader, e.g. update the text (2 of 10, 20%, etc) or play an animation.
 * @param  {Object} oOptions_ the current loaders properties {sIdLoader, iTotal, iLoaded, $elWrapper}
@@ -62,6 +66,7 @@ Add some code to match your loader, e.g. update the text (2 of 10, 20%, etc) or 
 
 
 **$.fn.jPoshLoad.updateStatus**
+
 Creates HTML elements for the preloader
 This Element will be stored and passed to you later on (updateStatus, onComplete).
 * @param  {String} sIdLoader_ the current loader's id
