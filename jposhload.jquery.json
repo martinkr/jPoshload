@@ -1,6 +1,6 @@
 {
     "name": "jposhload",
-    "version": "1.0.2",
+    "version": "2.0",
     "title": "jPoshload",
     "author": {
         "name": "Martin Krause",
@@ -10,18 +10,21 @@
         {
             "type": "MIT",
             "url": "http://opensource.org/licenses/MIT",
-            "type": "LGPL-3.0",
-            "url": "http://opensource.org/licenses/lgpl-3.0.html"
+            "type": "GPL-3.0",
+            "url": "http://opensource.org/licenses/gpl-3.0.html"
         }
     ],
     "dependencies": {
         "jquery": ">=1.5"
     },
-    "description": "jPoshLoad is an advanced animated preloader - think of flash-ish preloading.",
+    "description": "jPoshLoad is an advanced animated preloader - think of flash-ish preloading with multiple instances.",
     "keywords": [
         "prealoding",
         "ui",
-        "animation"
+        "animation",
+        "effects",
+        "singlepage",
+        "onepager"
     ],
     "bugs": "https://github.com/martinkr/jPoshload/issues",
     "homepage": "https://github.com/martinkr/jPoshload",
