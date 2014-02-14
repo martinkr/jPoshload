@@ -4,7 +4,7 @@
  *
  * jPoshLoad is an advanced animated preloader - think of flash-ish preloading with multiple instances.
  *
- * @Version: 2.0
+ * @Version: 2.0.1
  *
  *
  * Copyright (c) 2011-2014 Martin Krause (jquery.public.mkrause.info)
@@ -118,11 +118,11 @@
 	* Returns the number of images still not loaded completely
 	* @private
 	* @param  {String} sIdLoader_ Completed loader's id
-	* @return {Number}	Images left to load
+	* @return {Number | undefined }	Images left to load or undefined if this laoder doesn't exist
 	*/
 	function _getStatus(sIdLoader_) {
 		var _oData = jQuery(document).data('jPoshload')[sIdLoader_];
-		return _oData.iTotal - _oData.iLoaded;
+		return (_oData) ? _oData.iTotal - _oData.iLoaded : undefined ;
 	}
 
 
@@ -155,7 +155,7 @@
 
 
 	// public vars
-	$.fn.jPoshLoad.__version = 2.0; // class version
+	$.fn.jPoshLoad.__version = '2.0.1'; // class version
 	$.fn.jPoshLoad.__class = '$.fn.jPoshLoad'; // class name
 	$.fn.jPoshLoad.UIDBase = new Date().getTime();
 	$.fn.jPoshLoad.UID = $.fn.jPoshLoad.UIDBase;
@@ -189,7 +189,7 @@
 	/**
 	* Returns the number of images still not loaded completely
 	* @param  {String} sIdLoader_ Completed loader's id
-	* @return {Number}	Images left to load
+	* @return {Number | undefined }	Images left to load or undefined if this laoder doesn't exist
 	*/
 	$.fn.jPoshLoad.getStatus = function(sIdLoader_) {
 		return _getStatus(sIdLoader_);
@@ -201,7 +201,8 @@
 	* @return {Bool}
 	*/
 	$.fn.jPoshLoad.isComplete = function(sIdLoader_) {
-		return !_getStatus(sIdLoader_);
+		var _status = _getStatus(sIdLoader_);
+		return (_status === undefined) ? undefined : !_status;
 	};
 
 	/**
