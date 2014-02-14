@@ -4,7 +4,7 @@
  *
  * jPoshLoad is an advanced animated preloader - think of flash-ish preloading with multiple instances.
  *
- * @Version: 2.0.3
+ * @Version: 2.0.4
  *
  *
  * Copyright (c) 2011-2014 Martin Krause (jquery.public.mkrause.info)
@@ -60,7 +60,7 @@
 
 				_aElements = oOptions_.images,
 				_iElements  = _aElements.length,
-				_bForceNoCache = oOptions_.forceNoCache || false,
+				_bForceNoCache = _oOpts.forceNoCache || false,
 				_i
 			;
 
@@ -161,7 +161,7 @@ console.log('additem', arguments)
 
 
 	// public vars
-	$.fn.jPoshLoad.__version = '2.0.3'; // class version
+	$.fn.jPoshLoad.__version = '2.0.4'; // class version
 	$.fn.jPoshLoad.__class = '$.fn.jPoshLoad'; // class name
 	$.fn.jPoshLoad.UIDBase = new Date().getTime();
 	$.fn.jPoshLoad.UID = $.fn.jPoshLoad.UIDBase;
