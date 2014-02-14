@@ -4,7 +4,7 @@
  *
  * jPoshLoad is an advanced animated preloader - think of flash-ish preloading with multiple instances.
  *
- * @Version: 2.0.1
+ * @Version: 2.0.2
  *
  *
  * Copyright (c) 2011-2014 Martin Krause (jquery.public.mkrause.info)
@@ -121,7 +121,10 @@
 	* @return {Number | undefined }	Images left to load or undefined if this laoder doesn't exist
 	*/
 	function _getStatus(sIdLoader_) {
-		var _oData = jQuery(document).data('jPoshload')[sIdLoader_];
+		var _oData;
+		if(jQuery(document).data('jPoshload') && jQuery(document).data('jPoshload')[sIdLoader_] ) {
+			_oData = jQuery(document).data('jPoshload')[sIdLoader_];
+		}
 		return (_oData) ? _oData.iTotal - _oData.iLoaded : undefined ;
 	}
 
@@ -155,7 +158,7 @@
 
 
 	// public vars
-	$.fn.jPoshLoad.__version = '2.0.1'; // class version
+	$.fn.jPoshLoad.__version = '2.0.2'; // class version
 	$.fn.jPoshLoad.__class = '$.fn.jPoshLoad'; // class name
 	$.fn.jPoshLoad.UIDBase = new Date().getTime();
 	$.fn.jPoshLoad.UID = $.fn.jPoshLoad.UIDBase;
