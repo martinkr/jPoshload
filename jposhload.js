@@ -4,7 +4,7 @@
  *
  * jPoshLoad is an advanced animated preloader - think of flash-ish preloading with multiple instances.
  *
- * @Version: 2.0.2
+ * @Version: 2.0.3
  *
  *
  * Copyright (c) 2011-2014 Martin Krause (jquery.public.mkrause.info)
@@ -59,22 +59,25 @@
 				_oData = jQuery(document).data('jPoshload') || {},
 
 				_aElements = oOptions_.images,
+				_iElements  = _aElements.length,
 				_bForceNoCache = oOptions_.forceNoCache || false,
 				_i
 			;
 
-			_oData[sIdLoader_] = {oOptions: _oOpts, iTotal: 0 , _aLoad: [], _aLoaded:[],$elWrapper:_$elWrapper};
 
-			for (_i = 0; _i <_aElements.length; _i++) {
-				_oData[sIdLoader_]._aLoad.push(_aElements[_i]);
-			}
+			_oData[sIdLoader_] = {oOptions: _oOpts, iTotal: 0 ,$elWrapper:_$elWrapper};
 
-			_oData[sIdLoader_].iTotal = _oData[sIdLoader_]._aLoad.length;
+			_oData[sIdLoader_].iTotal = _iElements;
 			_oData[sIdLoader_].iLoaded = 0;
 
 			jQuery(document).data('jPoshload',_oData);
 
-			for (_i = 0; _i <_aElements.length; _i++) {
+			if(!_iElements) {
+				_updateState(sIdLoader_);
+				return;
+			}
+
+			for (_i = 0; _i <_iElements; _i++) {
 				_addItem(sIdLoader_,_bForceNoCache,_aElements[_i]);
 			}
 
@@ -93,7 +96,7 @@
 	*/
 	function _addItem(sIdLoader_,bForceNoCache_,sSrc_) {
 			// handle image
-
+console.log('additem', arguments)
 			var _elImage = document.createElement('img');
 
 			jQuery(_elImage).on('load.jPoshLoad',{sIdLoader: sIdLoader_},$.fn.jPoshLoad.onLoadItem);
@@ -158,7 +161,7 @@
 
 
 	// public vars
-	$.fn.jPoshLoad.__version = '2.0.2'; // class version
+	$.fn.jPoshLoad.__version = '2.0.3'; // class version
 	$.fn.jPoshLoad.__class = '$.fn.jPoshLoad'; // class name
 	$.fn.jPoshLoad.UIDBase = new Date().getTime();
 	$.fn.jPoshLoad.UID = $.fn.jPoshLoad.UIDBase;
@@ -222,6 +225,8 @@
 	$.fn.jPoshLoad.onComplete = function (sIdLoader_,$elWrapper_) {
 		jQuery('html').removeClass('jPoshLoad_completed-false');
 		$elWrapper_.delay(1500).fadeOut();
+		console.log('done', sIdLoader_)
+		jQuery.channel('publish','/jposhload/done',{"id": sIdLoader_});
 	};
 
 	/**
